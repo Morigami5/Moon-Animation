@@ -1,0 +1,499 @@
+:root{
+    --backgrond:#0E0E34;
+    --EarthBlue:#0071BD;
+    --EarthGreen:#01A89E;
+    --EarthWhite:#e6e6e6; 
+    --moon: #FBE6AD;
+    --moonShade1:#A08B55;
+    --moonShade2:#C6AE66;
+    --moonShade3:#FBD980;
+    --moonShade4:#F9E199;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+    background-color: var(--backgrond);
+}
+
+.earth-moon{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:550px;
+    height:550px;
+}
+
+.earth-moon .earth{
+    width:339px;
+    height:339px;
+    background-color: var(--EarthBlue);
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.earth-moon .shadow{
+    width:339px;
+    height:339px;
+    box-shadow: inset 60px -50px 0 0 rgba(0,0,0,0.2);
+    border-radius: 100%;
+    position: absolute;
+    z-index:4;
+}
+
+.land{
+    background-color: var(--EarthGreen);
+    position: absolute;
+    z-index:0;
+}
+
+.water{
+    background-color: var(--EarthBlue);
+    position: absolute;
+    z-index:1;
+}
+
+.cloud{
+    background-color: var(--EarthWhite);
+    position: absolute;
+    z-index:2;
+}
+
+#land1{
+    width:64px;
+    height:30px;
+    border-radius: 15px;
+    top:264px;
+    left:181px;
+}
+
+#land2{
+    width:89px;
+    height:44px;
+    border-radius:22px;
+    top:209px;
+    left:-19px;
+}
+
+#land3{
+    width:195px;
+    height:34px;
+    border-radius:17px;
+    top:175px;
+    left:101px;
+}
+
+#land4{
+    width:39px;
+    height:12px;
+    top:163px;
+    left:207px;
+}
+
+#land5{
+    width:219px;
+    height:69px;
+    border-radius:34.5px;
+    top:94px;
+    left:161px;
+}
+
+#land6{
+    width:61px;
+    height: 31px;
+    border-radius:15.5px;
+    top:84px;
+    left:43px;
+}
+
+#land7{
+    width:103px;
+    height:44px;
+    border-radius:22px;
+    top:-11px;
+    left:91px;
+}
+
+#water1{
+    width:107px;
+    height:12px;
+    border-radius:6px;
+    top:163px;
+    left:241px;
+}
+
+#water2{
+    width:107px;
+    height:12px;
+    border-radius:6px;
+    top:163px;
+    left:104px;
+}
+
+#cloud1{
+    width:241px;
+    height:46px;
+    border-radius:23px;
+    top:300px;
+    left:35px;
+    animation: cloudMove1 3s infinite linear;
+}
+
+#cloud2{
+    width:96px;
+    height:18px;
+    border-radius:9px;
+    top:234px;
+    left:243px;
+    animation: cloudMove2 4s infinite linear;
+}
+
+#cloud3{
+    width:157px;
+    height:44px;
+    border-radius:22px;
+    top:140px;
+    left:39px;
+    animation: cloudMove3 2.5s infinite linear;
+}
+
+#cloud4{
+    width:135px;
+    height:18px;
+    border-radius:9px;
+    top:94px;
+    left:210px;
+    animation: cloudMove4 3s infinite linear;
+}
+
+#cloud5{
+    width:135px;
+    height:18px;
+    border-radius:9px;
+    top:47px;
+    left:-18px;
+    animation: cloudMove5 4s infinite linear;
+}
+
+#cloud6{
+    width:194px;
+    height:46px;
+    border-radius:23px;
+    top:-23px;
+    left:81px;
+    animation: cloudMove6 2.5s infinite linear;
+}
+
+.orbit{
+    width:600px;
+    height:600px;
+    position: absolute;
+    /* border:2px solid yellow; */
+    border-radius: 100%;
+    animation: spin 5s infinite linear;
+}
+
+.orbit .moon{
+    width:129px;
+    height:129px;
+    background-color: var(--moon);
+    border-radius: 100%;
+    position: absolute;
+    top:235.5px;
+    left:-64.5px;
+    box-shadow: inset -7px -7px 0 0 var(--moonShade1),
+                inset -15px -15px 0 0 var(--moonShade2),
+                inset -35px -35px 0 0 var(--moonShade3),
+                inset -60px -60px 0 0 var(--moonShade4);
+}
+
+.hole1{
+    background-color: #8a6c24;
+    border-radius: 100%;
+    position:absolute;
+}
+
+.hole2{
+    background-color:#aa8632 ;
+    border-radius: 100%;
+    position:absolute;
+}
+
+.hole3{
+    background-color: #d5a73f;
+    border-radius: 100%;
+    position:absolute;
+}
+
+.hole4{
+    background-color:#deb863;
+    border-radius: 100%;
+    position:absolute;
+}
+
+.hole5{
+    background-color:#e4c582 ;
+    border-radius: 100%;
+    position:absolute;
+}
+
+#hole1-1{
+    width:2px;
+    height:2px;
+    box-shadow: inset 0.5px 0.5px 0 0 #694d0c;
+    top:95px;
+    left:113px;
+}
+
+#hole1-2{
+    width:2px;
+    height:2px;
+    box-shadow: inset 0.5px 0.5px 0 0 #694d0c;
+    top:115px;
+    left:94px;
+}
+
+
+#hole2-1{
+    width:2px;
+    height:2px;
+    box-shadow: inset 0.5px 0.5px 0 0 #694d0c;
+    top:49px;
+    left:112px;
+}
+
+#hole2-2{
+    width:8px;
+    height:8px;
+    box-shadow: inset 1px 1px 0 0 #694d0c;
+    top:64px;
+    left:112px;
+}
+
+#hole2-3{
+    width:4px;
+    height:4px;
+    box-shadow: inset 0.5px 0.5px 0 0 #694d0c;
+    top:94px;
+    left:99px;
+}
+
+#hole2-4{
+    width:4px;
+    height:4px;
+    box-shadow: inset 0.5px 0.5px 0 0 #694d0c;
+    top:110px;
+    left:82px;
+}
+
+#hole2-5{
+    width:7px;
+    height:7px;
+    box-shadow: inset 1px 1px 0 0 #694d0c;
+    top:114px;
+    left:60px;
+}
+
+#hole3-1{
+    width:11px;
+    height:11px;
+    box-shadow: inset 1px 1px 0 0 #89671f;
+    top:34px;
+    left:101px;
+}
+
+#hole3-2{
+    width:8px;
+    height:8px;
+    box-shadow: inset 1px 1px 0 0 #89671f;
+    top:51px;
+    left:91px;
+}
+
+#hole3-3{
+    width:9px;
+    height:9px;
+    box-shadow: inset 1px 1px 0 0 #89671f;
+    top:72px;
+    left:85px;
+}
+
+#hole3-4{
+    width:4px;
+    height:4px;
+    box-shadow: inset 0.5px 0.5px 0 0 #89671f;
+    top:93px;
+    left:85px;
+}
+
+#hole3-5{
+    width:3px;
+    height:3px;
+    box-shadow: inset 0.5px 0.5px 0 0 #89671f;
+    top:83px;
+    left:68px;
+}
+
+#hole3-6{
+    width:16px;
+    height:16px;
+    box-shadow: inset 1px 1px 0 0 #89671f;
+    top:95px;
+    left:47px;
+}
+
+#hole3-7{
+    width:6px;
+    height:6px;
+    box-shadow: inset 1px 1px 0 0 #89671f;
+    top:97px;
+    left:24px;
+}
+
+#hole4-1{
+    width:15px;
+    height:15px;
+    box-shadow: inset 1.5px 1.5px 0 0 #8b7134;
+    top:12px;
+    left:70px;
+}
+
+#hole4-2{
+    width:2px;
+    height:2px;
+    box-shadow: inset 0.5px 0.5px 0 0 #8b7134;
+    top:30px;
+    left:88px;
+}
+
+#hole4-3{
+    width:10px;
+    height:10px;
+    box-shadow: inset 1px 1px 0 0 #8b7134;
+    top:37px;
+    left:65px;
+}
+
+#hole4-4{
+    width:7px;
+    height:7px;
+    box-shadow: inset 1px 1px 0 0 #8b7134;
+    top:57px;
+    left:73px;
+}
+
+#hole4-5{
+    width:3px;
+    height:3px;
+    box-shadow: inset 1px 1px 0 0 #8b7134;
+    top:65px;
+    left:63px;
+}
+
+#hole4-6{
+    width:16px;
+    height:16px;
+    box-shadow: inset 1.5px 1.5px 0 0 #8b7134;
+    top:70px;
+    left:33px;
+}
+
+#hole4-7{
+    width:7px;
+    height:7px;
+    box-shadow: inset 1px 1px 0 0 #8b7134;
+    top:70px;
+    left:14px;
+}
+
+#hole5-1{
+    width:3px;
+    height:3px;
+    box-shadow: inset 0.5px 0.5px 0 0 #aa9867;
+    top:9px;
+    left:61px;
+}
+
+#hole5-2{
+    width:8px;
+    height:8px;
+    box-shadow: inset 1px 1px 0 0 #aa9867;
+    top:10px;
+    left:42px;
+}
+
+#hole5-3{
+    width:22px;
+    height:22px;
+    box-shadow: inset 1.5px 1.5px 0 0 #aa9867;
+    top:23px;
+    left:31px;
+}
+
+#hole5-4{
+    width:3px;
+    height:3px;
+    box-shadow: inset 0.5px 0.5px 0 0 #aa9867;
+    top:28px;
+    left:21px;
+}
+
+#hole5-4{
+    width:15px;
+    height:15px;
+    box-shadow: inset 1.5px 1.5px 0 0 #aa9867;
+    top:44px;
+    left:6px;
+}
+
+@keyframes cloudMove1{
+    0%, 100%{left:35px;}
+    50%{left:10px;}
+}
+
+@keyframes cloudMove2{
+    0%, 100%{left:243px;}
+    50%{left:268px;}
+}
+
+@keyframes cloudMove3{
+    0%, 100%{left:39px;}
+    50%{left:14px;}
+}
+
+@keyframes cloudMove4{
+    0%, 100%{left:210px;}
+    50%{left:235px;}
+}
+
+@keyframes cloudMove5{
+    0%, 100%{left:-18px;}
+    50%{left:-43px;}
+}
+
+@keyframes cloudMove6{
+    0%, 100%{left:81px;}
+    50%{left:56px;}
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
